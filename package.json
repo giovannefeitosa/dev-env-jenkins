@@ -1,0 +1,15 @@
+{
+  "name": "jenkins",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d --force-recreate",
+    "ps": "docker-compose ps",
+    "logs": "docker-compose logs --tail 200 jenkins",
+    "stop": "docker-compose down",
+    "create-network": "docker network create jenkins",
+    "initialAdminPassword": "docker-compose exec -T jenkins cat /var/jenkins_home/secrets/initialAdminPassword",
+    "uninstall": "docker-compose down && docker network rm jenkins"
+  },
+  "license": "MIT"
+}

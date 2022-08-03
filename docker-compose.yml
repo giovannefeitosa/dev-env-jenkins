@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  jenkins:
+    container_name: jenkins
+    build: .
+    network_mode: host
+    privileged: true
+    volumes:
+      - ${HOME}/dev:/app/dev
+      - jenkins_data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  jenkins_data:
+    driver: local
