@@ -2,6 +2,10 @@
 
 Jenkins in Docker.
 
+## Requirements
+
+Docker.
+
 ## Getting Started
 
 ```bash
